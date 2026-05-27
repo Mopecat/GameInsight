@@ -15,9 +15,21 @@ describe('App shell', () => {
     expect(screen.getByRole('link', { name: /用户路径/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /配置看板/i })).toBeInTheDocument();
 
-    expect(screen.getByLabelText(/国家/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/平台/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/渠道/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/版本/i)).toBeInTheDocument();
+    expect(screen.getByRole('combobox', { name: '国家' })).toBeInTheDocument();
+    expect(screen.getByRole('combobox', { name: '平台' })).toBeInTheDocument();
+    expect(screen.getByRole('combobox', { name: '渠道' })).toBeInTheDocument();
+    expect(screen.getByRole('combobox', { name: '版本' })).toBeInTheDocument();
+  });
+
+  it('默认展示实时看板核心指标和图表区域', () => {
+    render(<App />);
+
+    expect(screen.getByText('总安装')).toBeInTheDocument();
+    expect(screen.getByText('总收入')).toBeInTheDocument();
+    expect(screen.getByText('ARPU')).toBeInTheDocument();
+    expect(screen.getByText('付费率')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '安装与收入趋势' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '国家收入分布' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '渠道收入分布' })).toBeInTheDocument();
   });
 });

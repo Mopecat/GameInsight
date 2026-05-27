@@ -2,6 +2,7 @@ import { Activity, BarChart3, Flame, GitFork, LayoutDashboard, Settings2 } from 
 import { useMemo, useState } from 'react';
 
 import { GlobalFilters } from './components/filters/GlobalFilters';
+import { DashboardPage } from './pages/Dashboard/DashboardPage';
 import type { PageKey } from './types/domain';
 
 const pages: Array<{
@@ -120,13 +121,17 @@ function App() {
           <GlobalFilters />
         </header>
 
-        <section className="page-panel" aria-labelledby="page-title">
-          <div>
-            <p className="eyebrow">第一阶段基础骨架</p>
-            <h3 id="page-title">{activeMeta.title}</h3>
-            <p>{activeMeta.body}</p>
-          </div>
-        </section>
+        {activePage === 'dashboard' ? (
+          <DashboardPage />
+        ) : (
+          <section className="page-panel" aria-labelledby="page-title">
+            <div>
+              <p className="eyebrow">后续阶段建设中</p>
+              <h3 id="page-title">{activeMeta.title}</h3>
+              <p>{activeMeta.body}</p>
+            </div>
+          </section>
+        )}
       </main>
     </div>
   );
