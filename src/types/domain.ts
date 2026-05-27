@@ -37,4 +37,36 @@ export interface GameEvent {
   channel: Channel;
   version: Version;
   revenueUsd?: number;
+  sessionId?: string;
+  dayIndex?: number;
+}
+
+export interface PlayerProfile {
+  id: string;
+  installTimestamp: number;
+  country: Country;
+  platform: Platform;
+  channel: Channel;
+  version: Version;
+  payerSegment: 'non_payer' | 'minnow' | 'dolphin' | 'whale';
+  acquisitionCostUsd: number;
+}
+
+export interface MockDataRange {
+  startTimestamp: number;
+  endTimestamp: number;
+  days: number;
+}
+
+export interface MarketMetricSummary {
+  paymentRateByCountry: Record<Country, number>;
+  day1RetentionByCountry: Record<Country, number>;
+  tutorialCompletionRateByChannel: Record<Channel, number>;
+}
+
+export interface MockGameData {
+  players: PlayerProfile[];
+  events: GameEvent[];
+  range: MockDataRange;
+  summary: MarketMetricSummary;
 }
