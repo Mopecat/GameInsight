@@ -1,23 +1,51 @@
 # GameInsight
 
-GameInsight is a frontend BI demo for overseas mobile game operations. It is designed to simulate an internal data platform used by operations, growth, and data analysis teams.
+GameInsight 是一个面向手游出海业务的前端 BI Demo，用于模拟游戏公司内部数据中台。项目目标不是做一个静态大屏，而是覆盖运营、增长、数据分析团队常用的实时监控、留存分析、转化漏斗、用户路径追踪和配置化看板搭建场景。
 
-## Stage 1 Scope
+## 项目定位
 
-- React + TypeScript + Vite project foundation
-- BI-style application shell
-- Five workspace entries: Dashboard, Retention, Funnel, User Path, Builder
-- Global filters for country, platform, channel, and version
-- Zustand store for shared filter state
-- Vitest + Testing Library smoke test
+一句话介绍：
 
-## Interview Positioning
+面向手游出海业务的数据中台 BI 分析平台，支持实时运营看板、留存分析、漏斗分析、用户路径分析和配置化图表搭建。
 
-This project is not a static dashboard. The target is a simulated game data middle platform covering realtime monitoring, retention analysis, conversion funnels, user path analysis, and schema-driven chart building.
+面试讲述重点：
 
-The first stage establishes the frontend architecture that later stages will extend with reusable chart components, mock event generation, Web Worker aggregation, virtual lists, ECharts, and AntV G6.
+- 这个 Demo 模拟的是游戏公司内部数据中台，而不是普通 dashboard。
+- 核心业务围绕国家、平台、渠道、版本等维度展开。
+- 核心事件覆盖安装、注册、教程完成、战斗开始、商店浏览、抽卡、付费等典型手游链路。
+- 技术侧重点包括 TypeScript 类型建模、可复用图表组件、Web Worker 聚合、虚拟列表和配置化 schema。
 
-## Commands
+## 第一阶段范围
+
+- 搭建 React + TypeScript + Vite 项目基础。
+- 实现 BI 风格的应用主框架。
+- 提供五个工作区入口：实时看板、留存分析、漏斗分析、用户路径、配置看板。
+- 提供国家、平台、渠道、版本四个全局筛选条件。
+- 使用 Zustand 管理共享筛选状态。
+- 使用 Vitest + Testing Library 做应用壳冒烟测试。
+
+## 技术栈
+
+- React
+- TypeScript
+- Vite
+- ECharts
+- AntV G6
+- Zustand
+- Web Worker
+- react-window
+
+## 后续开发阶段
+
+1. 业务类型与 mock 数据生成器：模拟真实手游事件流和玩家生命周期。
+2. 可复用图表组件：封装 ECharts 基座、指标卡、趋势图、热力图、漏斗图。
+3. 实时运营看板：实现实时数据更新、多维筛选和图表联动。
+4. 留存分析：使用 Web Worker 聚合留存数据，并用虚拟列表承载大规模同期群明细。
+5. 漏斗分析：实现从安装到首充的转化漏斗与分组对比。
+6. 用户路径分析：使用 AntV G6 展示事件转移图。
+7. 配置化看板：基于 schema 实现轻量自助 BI 配置能力。
+
+## 运行命令
 
 ```bash
 npm install

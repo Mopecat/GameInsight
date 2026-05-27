@@ -12,61 +12,61 @@ const pages: Array<{
 }> = [
   {
     key: 'dashboard',
-    label: 'Dashboard',
-    description: 'Realtime operations command center',
+    label: '实时看板',
+    description: '游戏运营实时监控中心',
     icon: LayoutDashboard
   },
   {
     key: 'retention',
-    label: 'Retention',
-    description: 'Cohort heatmap and virtualized player cohorts',
+    label: '留存分析',
+    description: '留存热力图与虚拟滚动同期群明细',
     icon: Activity
   },
   {
     key: 'funnel',
-    label: 'Funnel',
-    description: 'Install to first payment conversion',
+    label: '漏斗分析',
+    description: '从安装到首充的转化链路',
     icon: Flame
   },
   {
     key: 'userPath',
-    label: 'User Path',
-    description: 'Event transition graph powered by G6',
+    label: '用户路径',
+    description: '基于 G6 的事件流转路径图',
     icon: GitFork
   },
   {
     key: 'builder',
-    label: 'Builder',
-    description: 'Schema-driven chart configuration',
+    label: '配置看板',
+    description: 'Schema-driven 图表配置能力',
     icon: Settings2
   }
 ];
 
 const pageCopy: Record<PageKey, { title: string; kicker: string; body: string }> = {
   dashboard: {
-    title: 'Realtime Operations Dashboard',
-    kicker: 'Live BI cockpit',
-    body: 'Track installs, revenue, ARPU, pay rate, and multi-dimensional drilldowns across overseas game markets.'
+    title: '实时运营看板',
+    kicker: '实时 BI 驾驶舱',
+    body: '面向手游出海运营场景，监控安装、收入、ARPU、付费率等核心指标，并支持国家、平台、渠道、版本等多维下钻。'
   },
   retention: {
-    title: 'Retention Analysis',
-    kicker: 'Cohort performance',
-    body: 'Aggregate D1, D3, D7, D14, and D30 retention in a Web Worker, then inspect cohort details with virtual scrolling.'
+    title: '留存分析',
+    kicker: 'Cohort 留存表现',
+    body: '使用 Web Worker 聚合 D1、D3、D7、D14、D30 留存，并通过虚拟列表查看大规模同期群明细。'
   },
   funnel: {
-    title: 'Conversion Funnel',
-    kicker: 'Install to first payment',
-    body: 'Compare conversion windows and discover where players drop between registration, tutorial, battle, shop, and payment.'
+    title: '转化漏斗分析',
+    kicker: '安装到首充',
+    body: '对比不同转化窗口，定位玩家在注册、教程、战斗、商店浏览和首充之间的关键流失环节。'
   },
   userPath: {
-    title: 'User Path Analysis',
-    kicker: 'Behavior graph',
-    body: 'Render event transition paths with weighted edges so analysts can identify dominant player journeys and dead ends.'
+    title: '用户路径分析',
+    kicker: '行为路径图',
+    body: '用带权边展示事件转移路径，帮助分析师识别主流玩家旅程、异常分支和行为断点。'
   },
   builder: {
-    title: 'Configurable Chart Builder',
-    kicker: 'Self-service BI',
-    body: 'Compose chart schemas from dimensions, measures, filters, and chart types to simulate a lightweight internal BI builder.'
+    title: '配置化看板搭建',
+    kicker: '自助式 BI',
+    body: '通过维度、指标、筛选条件和图表类型生成可序列化 schema，模拟内部 BI 工具的配置化搭建能力。'
   }
 };
 
@@ -76,14 +76,14 @@ function App() {
 
   return (
     <div className="app-shell">
-      <aside className="sidebar" aria-label="Primary navigation">
+      <aside className="sidebar" aria-label="主导航">
         <div className="brand-block">
           <div className="brand-mark" aria-hidden="true">
             <BarChart3 size={22} />
           </div>
           <div>
             <h1>GameInsight</h1>
-            <p>Mobile game BI</p>
+            <p>手游出海 BI</p>
           </div>
         </div>
 
@@ -122,7 +122,7 @@ function App() {
 
         <section className="page-panel" aria-labelledby="page-title">
           <div>
-            <p className="eyebrow">Stage 1 foundation</p>
+            <p className="eyebrow">第一阶段基础骨架</p>
             <h3 id="page-title">{activeMeta.title}</h3>
             <p>{activeMeta.body}</p>
           </div>
