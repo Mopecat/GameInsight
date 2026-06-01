@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { GlobalFilters } from './components/filters/GlobalFilters';
 import { DashboardPage } from './pages/Dashboard/DashboardPage';
+import { RetentionPage } from './pages/Retention/RetentionPage';
 import type { PageKey } from './types/domain';
 
 const pages: Array<{
@@ -121,9 +122,9 @@ function App() {
           <GlobalFilters />
         </header>
 
-        {activePage === 'dashboard' ? (
-          <DashboardPage />
-        ) : (
+        {activePage === 'dashboard' && <DashboardPage />}
+        {activePage === 'retention' && <RetentionPage />}
+        {activePage !== 'dashboard' && activePage !== 'retention' && (
           <section className="page-panel" aria-labelledby="page-title">
             <div>
               <p className="eyebrow">后续阶段建设中</p>

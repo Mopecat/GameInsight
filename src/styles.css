@@ -164,7 +164,8 @@ select {
   line-height: 1.65;
 }
 
-.dashboard-page {
+.dashboard-page,
+.retention-page {
   display: grid;
   gap: 18px;
 }
@@ -283,6 +284,50 @@ select {
   min-height: 220px;
 }
 
+.retention-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(360px, 0.75fr);
+  gap: 16px;
+}
+
+.cohort-list {
+  overflow: hidden;
+  border: 1px solid #edf1f7;
+  border-radius: 8px;
+}
+
+.cohort-list-header,
+.cohort-list-row {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.75fr 0.7fr 0.7fr 0.7fr;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  font-size: 0.82rem;
+}
+
+.cohort-list-header {
+  min-height: 40px;
+  color: #536176;
+  font-weight: 800;
+  background: #f8fafc;
+}
+
+.cohort-list-row {
+  border-top: 1px solid #edf1f7;
+  color: #273548;
+}
+
+.empty-state {
+  display: grid;
+  min-height: 160px;
+  place-items: center;
+  color: #7b8797;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
 @media (max-width: 920px) {
   .app-shell {
     grid-template-columns: 1fr;
@@ -313,7 +358,8 @@ select {
   }
 
   .metric-grid,
-  .dashboard-grid {
+  .dashboard-grid,
+  .retention-grid {
     grid-template-columns: 1fr;
   }
 
